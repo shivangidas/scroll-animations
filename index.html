@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Scroll-driven Animations</title>
+
+
+	<link rel="stylesheet" href="style.css">
+
+	<style>
+        /* Progress bar */
+        html {
+            scroll-timeline-name: --page-scroll;
+        }
+
+        @keyframes grow-progress {
+            from { transform: scaleX(0); }
+            to {transform: scaleX(1); }
+        }
+
+        #progress {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 0.5em;
+            background-color: rgb(138, 7, 33);
+
+            transform-origin: 0 50%;
+            animation: grow-progress auto linear;
+            animation-timeline: --page-scroll;
+
+        }
+        /* card stacks */
+		@supports (animation-timeline: view()) {
+			.card {
+				--index0: calc(var(--index) - 1); /* 0-based index */
+				--reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+				--reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+			}
+
+			@keyframes scale {
+				to {
+					transform:
+						scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+				}
+			}
+
+			#cards {
+				--numcards: 6;
+				view-timeline-name: --cards-element-scrolls-in-body;
+			}
+
+			.card__content {
+				--start-range: calc(var(--index0) / var(--numcards) * 100%);
+				--end-range: calc((var(--index)) / var(--numcards) * 100%);
+
+				animation: linear scale forwards;
+				animation-timeline: --cards-element-scrolls-in-body;
+				animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="progress"></div>
+	<header>
+		<div>
+			<h1>Keep it Simple</h1>
+			<p>🌈 What's new in CSS</p>
+		</div>
+	</header>
+	<main>
+		<ul id="cards">
+			<li class="card" id="card_1">
+				<div class="card__content">
+					<div>
+						<h2>Scroll driven animations</h2>
+						<p>Pre-requisite - CSS animations</p>
+						<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations" target="_blank" class="btn btn--accent">Read more</a></p>
+					</div>
+                    <div class="animation_div">
+                        <div id="box"></div>
+                    </div>
+				</div>
+			</li>
+			<li class="card" id="card_2">
+				<div class="card__content">
+					<div>
+						<h2>Card Two</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+					</div>
+					 <div class="animation_div">
+                        <div id="ball"></div>
+                    </div>
+				</div>
+			</li>
+			<li class="card" id="card_3">
+				<div class="card__content">
+					<div>
+						<h2>Card Three</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+					</div>
+                    <div class="animation_div">
+                        <div id="box2"></div>
+                    </div>
+				</div>
+			</li>
+			<li class="card" id="card_4">
+				<div class="card__content">
+					<div>
+						<h2>Card Four</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+					</div>
+                    <div class="animation_div">
+                        
+                    </div>
+				</div>
+			</li>
+            <li class="card" id="card_5">
+				<div class="card__content">
+					<div>
+						<h2>Card Five</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+					</div>
+                    <div class="animation_div">
+                        
+                    </div>
+				</div>
+			</li>
+            <li class="card" id="card_6">
+				<div class="card__content">
+					<div>
+						<h2>Card Six</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+					</div>
+                    <div class="animation_div">
+                        
+                    </div>
+				</div>
+			</li>
+		</ul>
+	</main>
+	<aside>
+        <div>
+            <h1>Thank You!</h1>
+        </div>
+	</aside>
+
+</body>
+
+</html>
