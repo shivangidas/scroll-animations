@@ -26,7 +26,7 @@
             top: 0;
             width: 100%;
             height: 0.5em;
-            background-color: rgb(138, 7, 33);
+            background-color: rgb(25, 233, 223);
 
             transform-origin: 0 50%;
             animation: grow-progress auto linear;
@@ -69,8 +69,9 @@
 	<div id="progress"></div>
 	<header>
 		<div>
-			<h1>Keep it Simple</h1>
-			<p>🌈 What's new in CSS</p>
+			<h1>Keep it Simple 🌈 </h1>
+			<p>What's new in CSS</p>
+            <p>👇</p>
 		</div>
 	</header>
 	<main>
@@ -80,7 +81,7 @@
 					<div>
 						<h2>Scroll driven animations</h2>
 						<p>Pre-requisite - CSS animations</p>
-						<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations" target="_blank" class="btn btn--accent">Read more</a></p>
+						<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations" target="_blank" class="btn btn--accent">Read about it</a></p>
 					</div>
                     <div class="animation_div">
                         <div id="box"></div>
@@ -90,21 +91,30 @@
 			<li class="card" id="card_2">
 				<div class="card__content">
 					<div>
-						<h2>Card Two</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+						<h2>animation-timeline</h2>
+                        <p>
+                            Anonymous scroller <code>{ animation-timeline: scroll() }</code> 
+                        </p>
+                        <p>default options for scroll(&lt;scroller&gt;, &lt;axis&gt;) - nearest, block</p>
+                        
+						<p><a href="https://scroll-driven-animations.style/tools/scroll-timeline/params/" target="_blank" class="btn btn--accent">Scroll parameters</a></p>
 					</div>
-					 <div class="animation_div">
-                        <div id="ball"></div>
+					 <div class="animation_div long_div">
+                        <p>Scroll here</p>
+                        <div id="chameleon"></div>
+                        <div class="spacer"></div>
                     </div>
 				</div>
 			</li>
 			<li class="card" id="card_3">
 				<div class="card__content">
 					<div>
-						<h2>Card Three</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+                        <h2>scroll v/s view</h2>
+						<p>scroll-timeline - tracks the scroll progress in the scroll container</p>
+                        <p><a href="https://scroll-driven-animations.style/tools/scroll-timeline/progress/" target="_blank" class="btn btn--accent">Scroll timeline example</a></p>
+                        <p>view-timeline - tracks the relative position of the subject within the scrollport</p>
+                        <p><code>{ animation-timeline: view() }</code> always tracks within the nearest scroller.</p>
+						<p><a href="https://scroll-driven-animations.style/tools/view-timeline/progress/" target="_blank" class="btn btn--accent">View timeline example</a></p>
 					</div>
                     <div class="animation_div">
                         <div id="box2"></div>
@@ -114,33 +124,43 @@
 			<li class="card" id="card_4">
 				<div class="card__content">
 					<div>
-						<h2>Card Four</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+						<h2>Attachment range</h2>
+						<p><code>{ animation-range: 0vh 90vh; }</code> - animation starts at top and ends when scrolled to 90vh</p>
+                        <p>default is normal - cover 0% cover 100%</p>
+                        <p>options like cover, contain, entry, exit, entry-crossing, exit-crossing</p>
+                        <p><a href="https://scroll-driven-animations.style/tools/view-timeline/ranges/#range-start-name=cover&range-start-percentage=0&range-end-name=cover&range-end-percentage=100&view-timeline-axis=block&view-timeline-inset=0&subject-size=smaller&subject-animation=reveal&interactivity=clicktodrag&show-areas=yes&show-fromto=yes&show-labels=yes" target="_blank" class="btn btn--accent">Try it out</a></p>
 					</div>
-                    <div class="animation_div">
-                        
+                    <div class="animation_div long_div">
+                        <p>Scroll here</p>
+                        <div id="horizontalLine"></div>
+                        <div class="spacer"></div>
                     </div>
 				</div>
 			</li>
             <li class="card" id="card_5">
 				<div class="card__content">
 					<div>
-						<h2>Card Five</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+						<h2>Named timeline</h2>
+						<p>Examples in this page</p>
+                        <p>
+                        <code>html {
+                            scroll-timeline-name: --page-scroll;
+                        }</code></p>
+                        <p><code>#card {
+                            view-timeline-name: --cards-element-scrolls-in-body;
+                        }</code></p>
 					</div>
                     <div class="animation_div">
-                        
+                        <div id="ball"></div>
                     </div>
 				</div>
 			</li>
             <li class="card" id="card_6">
 				<div class="card__content">
 					<div>
-						<h2>Card Six</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#top" class="btn btn--accent">Read more</a></p>
+						<h2>No Javascript</h2>
+						<p>...but can be added with Web Animations API</p>
+                        <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" target="_blank" class="btn btn--accent">WAAPI</a></p>
 					</div>
                     <div class="animation_div">
                         

@@ -117,17 +117,6 @@ header {
     place-items: start;
 }
 
-/* .card__content > figure {
-	grid-area: img;
-	overflow: hidden;
-}
-
-.card__content > figure > img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-} */
-
 .card__content .animation_div {
     grid-area: img;
     height: 80vh;
@@ -152,7 +141,6 @@ header {
         transform: translateY(0);
     }
 }
-
 #ball {
     background-color: rgb(37, 224, 143);
     border-radius: 50%;
@@ -179,6 +167,7 @@ header {
     animation: 4s linear 0s infinite alternate side_to_side;
 }
 
+
 @keyframes side_to_side {
     0% {
         transform: translateX(0) translateY(0);
@@ -190,6 +179,59 @@ header {
         transform: translateX(0) translateY(60vh);
     }
 }
+.long_div {
+    overflow-y: scroll;
+    height: 28em;
+    padding: 4em;
+}
+.spacer {
+    height: 60em;
+}
+#chameleon {
+    height: 10em;
+    width: 5em;
+    background-color:  rgb(47, 186, 255);
+    border-radius: 10%;
+    animation: linear alternate color_change_move;
+    animation-timeline: scroll();
+}
+
+@keyframes color_change_move {
+    from {
+        background-color: rgb(47, 186, 255);
+        transform: translateY(0);
+    }
+    to {
+        background-color: rgb(178, 54, 32);
+        transform: translateY(60em);
+    }
+}
+
+#horizontalLine {
+    width: 100%;
+    height: 2em;
+    margin-top: var(--card-height);
+    background-color: rgb(65, 218, 23);
+    animation: linear color_change_shrink;
+    animation-timeline: view();
+    animation-range: contain 10% contain 90%;
+}
+
+@keyframes color_change_shrink {
+    0% {
+        background-color: rgb(47, 186, 255);
+        transform: scaleX(1);
+    }
+    50% {
+        background-color: rgb(178, 54, 32);
+        transform: scaleX(0.5);
+    }
+    100% {
+        background-color: rgb(243, 18, 247);
+        transform: scaleX(1);
+    }
+}
+
 
 main h1 {
     font-weight: 300;
