@@ -1,2 +1,2 @@
-# scroll-without-js
+# scroll-animations
 Scroll driven animations
