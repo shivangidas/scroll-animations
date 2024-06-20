@@ -259,11 +259,8 @@ main .btn {
 }
 
 aside {
-    width: 50vw;
+    height: 90vh;
     margin: 0 auto;
     text-align: center;
-}
-
-aside div {
-    margin-bottom: 10em;
+    padding-top: 30vh;
 }
