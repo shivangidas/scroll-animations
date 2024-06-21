@@ -232,7 +232,6 @@ header {
     }
 }
 
-
 main h1 {
     font-weight: 300;
     font-size: 3.5em;
@@ -264,3 +263,86 @@ aside {
     text-align: center;
     padding-top: 30vh;
 }
+
+
+/* 3d box */
+.perspective {
+    --size: 100px;
+    position: relative;
+    perspective: 800px;
+    perspective-origin: 50% -200px;
+    padding-top: 50%;
+    padding-left: 40%;
+  }
+  
+  #box3 {  
+    width: var(--size);
+    aspect-ratio: 1;  
+  
+    position: relative;
+    transform-style: preserve-3d;
+    
+    transform-origin: 50px bottom -50px;
+    animation: rotate 4s linear infinite;
+  }
+  
+  .face {
+    position: absolute;
+    width: var(--size);
+    aspect-ratio: 1;
+    
+    background-color: coral;
+    transform-style: preserve-3d;
+  }
+  .face.front {
+    background-color: rgb(47, 234, 14);
+    opacity: 0.4;
+  }
+  
+  .face.bottom {
+    top: 100%;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    background-color: coral;
+  }
+  
+  .face.top {
+    bottom: 100%;
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+    background-color: aqua;
+    opacity: 0.7;
+  }
+  
+  .face.back {
+    bottom: 200%;
+    transform-origin: center 150px -50px;
+    transform: rotateX(180deg);
+    background-color: aquamarine;
+    opacity: 0.5;
+  }
+  
+  .face.right {
+    left: 100%;
+    transform-origin: left;
+    transform: rotateY(90deg);
+    background-color: darkseagreen;
+    opacity: 0.5;
+  }
+  
+  .face.left {
+    right: 100%;
+    transform-origin: right;
+    transform: rotateY(-90deg);
+    background-color: rgb(27, 56, 205);
+    opacity: 0.5;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
