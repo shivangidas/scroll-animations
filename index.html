@@ -81,7 +81,7 @@
 					<div>
 						<h2>Scroll driven animations</h2>
 						<p>Pre-requisite - CSS animations</p>
-						<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations" target="_blank" class="btn btn--accent">Read about it</a></p>
+						<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations" target="_blank" class="btn btn--accent">Read about animation</a></p>
 					</div>
                     <div class="animation_div">
                         <div id="box"></div>
@@ -93,9 +93,9 @@
 					<div>
 						<h2>animation-timeline</h2>
                         <p>
-                            Anonymous scroller <code>{ animation-timeline: scroll() }</code> 
+                            Create an anonymous scroller using <code>{ animation-timeline: scroll() }</code> and add to the element being animated.
                         </p>
-                        <p>default options for scroll(&lt;scroller&gt;, &lt;axis&gt;) - nearest, block</p>
+                        <p>default options for scroll(&lt;scroller&gt; &lt;axis&gt;) - <code>scroll(nearest block)</code></p>
                         
 						<p><a href="https://scroll-driven-animations.style/tools/scroll-timeline/params/" target="_blank" class="btn btn--accent">Scroll parameters</a></p>
 					</div>
@@ -110,9 +110,9 @@
 				<div class="card__content">
 					<div>
                         <h2>scroll v/s view</h2>
-						<p>scroll-timeline - tracks the scroll progress in the scroll container</p>
+						<p>scroll-timeline - tracks the scroll progress in the scroll container. Here the progress bar at the top is using scroll-timeline.</p>
                         <p><a href="https://scroll-driven-animations.style/tools/scroll-timeline/progress/" target="_blank" class="btn btn--accent">Scroll timeline example</a></p>
-                        <p>view-timeline - tracks the relative position of the subject within the scrollport</p>
+                        <p>view-timeline - tracks the relative position of the subject within the scrollport. The cards are using view-timeline.</p>
                         <p><code>{ animation-timeline: view() }</code> always tracks within the nearest scroller.</p>
 						<p><a href="https://scroll-driven-animations.style/tools/view-timeline/progress/" target="_blank" class="btn btn--accent">View timeline example</a></p>
 					</div>
@@ -125,9 +125,9 @@
 				<div class="card__content">
 					<div>
 						<h2>Attachment range</h2>
-						<p><code>{ animation-range: 0vh 90vh; }</code> - animation starts at top and ends when scrolled to 90vh</p>
-                        <p>default is normal - cover 0% cover 100%</p>
-                        <p>options like cover, contain, entry, exit, entry-crossing, exit-crossing</p>
+						<p><code>{ animation-range: contain 10% contain 90%; }</code> - animation starts when the element is 10% in view and stops when it has crossed 80% of the scrollport.</p>
+                        <p>Default is normal (cover 0% cover 100%)</p>
+                        <p>Other options include cover, contain, entry, exit, entry-crossing, exit-crossing</p>
                         <p><a href="https://scroll-driven-animations.style/tools/view-timeline/ranges/#range-start-name=cover&range-start-percentage=0&range-end-name=cover&range-end-percentage=100&view-timeline-axis=block&view-timeline-inset=0&subject-size=smaller&subject-animation=reveal&interactivity=clicktodrag&show-areas=yes&show-fromto=yes&show-labels=yes" target="_blank" class="btn btn--accent">Try it out</a></p>
 					</div>
                     <div class="animation_div long_div">
@@ -141,6 +141,7 @@
 				<div class="card__content">
 					<div>
 						<h2>Named timeline</h2>
+                        <p>Name a scroll/view timeline using a custom identifier.</p>
 						<p>Examples in this page</p>
                         <p>
                         <code>html {
@@ -159,13 +160,14 @@
 				<div class="card__content">
 					<div>
 						<h2>No Javascript</h2>
-                        <p>Javascript is not needed for styling a page or for animations. Nor do you need any framework and library.</p>
-						<p>(...if you really want to use JS here you can with Web Animations API)</p>
-                        <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" target="_blank" class="btn btn--accent">WAAPI</a></p>
+                        <p>This static page is built with HTML and CSS and hosted on github pages. <a href="https://github.com/shivangidas/scroll-animations" target="_blank" class="btn btn--accent">Check out the code</a></p>
+                        <p>Javascript is not needed for styling a page or for animations. Nor do you need any framework or library. </p>
+						<p>(...if you really want to use JS here you can with Web Animations API 
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" target="_blank" class="btn btn--accent">WAAPI</a>)</p>
 					</div>
                     <div class="animation_div">
                         <div class="perspective">
-                            <div id="box3">
+                            <div id="box3d">
                               <div class="face top"></div>
                               <div class="face bottom"></div>
                               <div class="face back"></div>
